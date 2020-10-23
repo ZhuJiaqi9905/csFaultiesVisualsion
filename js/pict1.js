@@ -121,7 +121,7 @@ let pict1 = {
         
             
             // tooltip
-            let tooltip = document.getElementById("tooltip");
+            let tooltip = document.getElementById("mytooltip");
             let trs = tooltip.getElementsByTagName("tr");
             for(let i = 0; i < trs.length; i++){
                 let td = trs[i].getElementsByTagName("td")[1];
@@ -152,7 +152,7 @@ let pict1 = {
 
             // remove tooltip
            
-            let tooltip = document.getElementById("tooltip");
+            let tooltip = document.getElementById("mytooltip");
             let trs = tooltip.getElementsByTagName("tr");
             for(let i = 0; i < trs.length; i++){
                 let td = trs[i].getElementsByTagName("td")[1];
@@ -173,7 +173,11 @@ let pict1 = {
         
 
     },
+    filterByYears:(years) => {
+
+    },
     mainFunc: (data_file) => {
+        //便于在画每个图时候调试
         d3.csv(data_file).then(function(DATA) {
             data = DATA;
             // remove data without x_attr or y_attr
@@ -183,4 +187,3 @@ let pict1 = {
         })        
     } 
 }
-pict1.mainFunc(data_file);

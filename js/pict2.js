@@ -86,9 +86,10 @@ let pict2 = {
                         .append('g')
                         .attr('class', (d, i) => {
                             let name = d["First Name"] + d["Mid Name"] + d["Last Name"];
-                            return name;
+                            return name + " " + d["Ph.D. Graduation Year"];
                         })
                         .classed("line", true)
+                        
         let n = pict2.yAttrs.length;
         for(let i = 0; i < n - 1; i++){
             gLines.append("line")
@@ -127,11 +128,13 @@ let pict2 = {
         pict2.drawAxis(svg, data)
         pict2.drawLines(svg, data)
     },
-    mainFunc: (data_file) => {
+    filterByYears:(years) => {
+        d3.selectAll(".line")
+          .
+    },
+    mainFunc: (data_file) => {//便于在画每个图时候调试
         d3.csv(data_file).then(function(DATA) {
             data = DATA;
-            
-
             data = data.filter((d, i) => {
                 if(d['Ph.D. Graduation Year'] === '' || d['Publications'] === ''){
                     return false;
@@ -153,4 +156,4 @@ let pict2 = {
     
 
 }
-pict2.mainFunc(data_file);
+//pict2.mainFunc(data_file);

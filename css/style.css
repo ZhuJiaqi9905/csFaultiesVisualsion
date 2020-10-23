@@ -83,7 +83,7 @@ h1 {
     transform: scale(0.8) translate(800px,0px);
     overflow: visible;
   }
-  #tooltip{
+  #mytooltip{
     position: absolute;           
     text-align: center;
     background-color: rgba(250, 250, 250, 1);
