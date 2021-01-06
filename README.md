@@ -1,4 +1,4 @@
-# csFaultiesVisualsion
+# csFaultiesVisualzation
 可视化三次作业。对csrank的排名进行不同角度的可视化
 
 hw1: 散点图+平行坐标图
