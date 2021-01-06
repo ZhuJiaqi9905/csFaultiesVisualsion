@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Khand-Regular';
+    src: url('./font/Khand-Regular.ttf');
+}
+@font-face {
+    font-family: 'KAITI';
+    src: url(./font/KAITI.ttf);
+}
+@font-face {
+    font-family: 'PingFangSC-Regular';
+    src: url(./font/PingFang-SC-Regular.ttf);
+}
+
+@media only screen and (min-width: 1080px) {
+    html {
+        font-size: 15px !important;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    html {
+        font-size: 25px !important;
+    }
+}
+
+
+
+html{
+    background-color: rgba(240, 240, 240, 0.9);
+}
+body {
+    min-width: 1000px;
+    font-size: 12px;
+    background-color: rgba(240, 240, 240, 0.9);
+}
+h1{
+    text-align: center;
+    font-size: 25px;
+    margin: 20;
+    padding: 20;
+}
+#container {
+
+    text-align: center;
+    overflow: visible;
+}
+#pict3{
+    overflow:visible;
+}
+#paramSlide{
+    /* position: absolute;
+    transform: translate(100px, 40px); */
+   
+
+    background-color: rgb(235, 233, 233);
+    border: 1px solid rgb(200,200,200);
+   
+}

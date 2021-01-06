@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+
+    <title>A Visualization for Faculties That Research on Computer Science in Well-known Universities</title>
+
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    
+    <!-- core JavaScript
+    ================================================== -->
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/popper.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/bootstrap-slider.js"></script>
+    <script src="js/lib/d3.v6.min.js"></script>
+  </head>
+  <body>
+	  <h1>A Visualization for Faculties That Research on Computer Science in Well-known Universities</h1>
+  
+    <div id="div1">
+		
+      <svg id="pict1">
+        <g id="pict1g"></g>
+      </svg>
+      
+    </div>
+    <div id="div2">
+      <svg id="pict2">
+        <g id="pict2g"></g>
+      </svg>
+    </div>
+    <div id="mytooltip">
+      <table>
+        <tr>
+          <td>Name: </td>
+          <td></td>
+        </tr>
+        <tr><td>Institution: </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Ph.D. Graduation Year: </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Ph.D. Graduation School: </td>
+          <td></td>
+        </tr>
+      </table>	
+    </div>
+	<div id="yearFilter">
+	Select Ph.D. Graduation Year between 1975<input id="yearSlider" type="text" class="span2" value="" data-slider-min="1970" data-slider-max="2025" data-slider-step="1" data-slider-value="[1,200]"/> 2020
+	</div>
+
+
+  <script src="js/utils.js"></script>
+  <script src="js/pict1.js"></script>
+  <script src="js/pict2.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var slider = new Slider('#yearSlider', {});//筛选时间的组件
+    slider.setValue([1975, 2020]);
+    
+    $("#yearSlider").on("change", function(slideEvt){
+      
+      console.log(slideEvt.value);
+      let years = slideEvt.value.newValue;
+      data = filterByYear(years);
+      pict1.drawPoints(data);
+      pict2.drawLines(data);
+    })
+  </script>
+</body>
+</html>
